@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<html>
+<body style="background-color: black">
+    <div class="text-center" style="font-family: Impact; color: bisque">
+        <h1 class="display-4">Welcome to the Dark Souls Imaginarium</h1>
+        <p style="font-size: 72px">\[T]/</p>
+        <p><a href="https://docs.microsoft.com/aspnet/core">Praise the Sun!</a></p>
+        <label for="class">Select Your Starting Class</label><br />
+
+        <form method="post" action="#" id="createClass">
+            <select name="class" id="class" style="font-size: 24px">
+                <option value="knight">Knight</option>
+                <option value="mercenary">Mercenary</option>
+                <option value="herald">Herald</option>
+                <option value="thief">Thief</option>
+                <option value="assassin">Assassin</option>
+                <option value="sorcerer">Sorcerer</option>
+                <option value="pyromancer">Pyromancer</option>
+                <option value="cleric">Cleric</option>
+                <option value="deprived">Deprived</option>
+            </select>
+            <button onclick="newClass()">Create New Unkindled</button>
+        </form>
+        
+        <script>
+            
+        </script>
+    </div>
+</body>
+</html>
