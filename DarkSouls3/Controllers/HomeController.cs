@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using DarkSouls3.Models;
+using System.Net.Http;
+using System.Text.Json;
 
 namespace DarkSouls3.Controllers
 {
@@ -23,13 +25,36 @@ namespace DarkSouls3.Controllers
             return View();
         }
 
-        public IActionResult Character(string myClass)
+        public async Task<IActionResult> Character(string myClass)
         {
-            return View(myClass);
+            string character = myClass;
+            //await Build(myClass);
+
+            Build myChar = new Build();
+            myChar.start = character;
+
+            return View(myChar);
         }
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public async Task<string> Build(string myClass)
+        {
+            string myObject;
+
+            using (var httpClient = new HttpClient())
+            {
+                using (var response = await httpClient.GetAsync("https://mugenmonkey.com/api/v0/ds3_armors"))
+                {
+                    var summary = await response.Content.ReadAsStringAsync();
+                    JsonDocument jDoc = JsonDocument.Parse(summary);
+                    myObject = jDoc.RootElement.GetProperty("ds3_armor").ToString(); ;
+                }
+            }
+
+                return myObject;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

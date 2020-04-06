@@ -14,13 +14,3 @@ function updateArmor(item) {
 function updateRing(item) {
 
 }
-
-function newClass(myClass) {
-    var x = document.getElementById("class").value;
-
-    $.ajax({
-        url: '/Home/Character',
-        data: { class: x },
-        success: function (data) {}
-        }); 
-}
