@@ -4,7 +4,11 @@
 // Write your JavaScript code.
 
 function updateWeapon(item) {
-
+    var character = {
+        level: document.getElementByName("level"),
+        strength: document.getElementsByName("strength")
+    };
+    console.log(character["level"]);
 }
 
 function updateArmor(item) {
