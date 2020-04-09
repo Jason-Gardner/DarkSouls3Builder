@@ -2,102 +2,13 @@
     ViewData["Title"] = "Character";
 }
 
-@model Build
-
 <h1>Character</h1>
-
-
-
-<form id="stats" action="stats">
+<body>
     <table>
-        <tr>
-            <td colspan="2">Class: @Model.start</td>
-        </tr>
-        <tr>
-            <td>
-                <label for="level">Starting Level: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="level" readonly placeholder="@Model.level" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="level">Strength: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="strength" readonly placeholder="@Model.strength" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="level">Dexterity: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="dexterity" readonly placeholder="@Model.dexterity" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="endurance">Endurance: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="endurance" readonly placeholder="@Model.endurance" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="vitality">Vitality: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="vitality" readonly placeholder="@Model.vitality" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="vigor">Vigor: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="vigor" readonly placeholder="@Model.vigor" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="attunement">Attunement: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="attunement" readonly placeholder="@Model.attunement" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="faith">Faith: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="faith" readonly placeholder="@Model.faith" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="luck">Luck: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="luck" readonly placeholder="@Model.luck" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <label for="intelligence">Intelligence: </label>
-            </td>
-            <td style="width: 50px">
-                <input name="intelligence" readonly placeholder="@Model.intelligence" />
-            </td>
-        </tr>
     </table>
-    <select value="weapon" onsubmit="updateWeapon()">
-        <option value="sword">Sword</option>
-        <option value="dagger">Dagger</option>
-        <option value="bow">Bow</option>
-    </select>
-    <button type="submit">Select Weapon</button>
-</form>
+
+    <input type="button" id="btn" value="Submit" />
+</body>
+
+<script src="~/js/site.js"></script>
+

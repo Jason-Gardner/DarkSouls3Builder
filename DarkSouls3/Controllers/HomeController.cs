@@ -25,59 +25,13 @@ namespace DarkSouls3.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Character(string myClass)
+        public IActionResult Character()
         {
-            string character = myClass;
-            Build myChar = await NewBuild(myClass);
-
-            return View(myChar);
+            return View();
         }
         public IActionResult Privacy()
         {
             return View();
-        }
-
-        public async Task<Build> NewBuild(string myClass)
-        {
-            switch (myClass)
-            {
-                case ("knight"):
-                    Build Knight = new Build()
-                    {
-                        level = 1,
-                        strength = 1,
-                        intelligence = 1,
-                        attunement = 1,
-                        dexterity = 1,
-                        endurance = 1,
-                        faith = 1,
-                        luck = 1,
-                        vitality = 1,
-                        vigor = 1,
-                        start = myClass
-                    };
-                    return Knight;
-                default:
-                    Build Player = new Build()
-                    {
-
-                    };
-                    return Player;
-            }
-
-
-
-            //using (var httpClient = new HttpClient())
-            //{
-            //    using (var response = await httpClient.GetAsync("https://mugenmonkey.com/api/v0/ds3_armors"))
-            //    {
-            //        var summary = await response.Content.ReadAsStringAsync();
-            //        JsonDocument jDoc = JsonDocument.Parse(summary);
-            //        myObject = jDoc.RootElement.GetProperty("ds3_armor").ToString(); ;
-            //    }
-            //}
-
-            //return myObject;
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

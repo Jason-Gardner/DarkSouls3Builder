@@ -1,20 +1,45 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿let newClass = {
+    start: "Knight",
+    level: 1,
+    strength: 1,
+    dexterity: 1,
+    vigor: 1,
+    intelligence: 1,
+    endurance: 1,
+    vitality: 1,
+    luck: 1,
+    faith: 1,
+    attunement: 1
+};
 
-// Write your JavaScript code.
+//function generateTableHead(table, data) {
+//    let thead = table.createTHead();
+//    let row = thead.insertRow();
+//    for (let key of data) {
+//        let th = document.createElement("th");
+//        let text = document.createTextNode(key);
+//        th.appendChild(text);
+//        row.appendChild(th);
+//    }
+//}
 
-function updateWeapon(item) {
-    var character = {
-        level: document.getElementByName("level"),
-        strength: document.getElementsByName("strength")
-    };
-    console.log(character["level"]);
+function newCharacter(table, data) {
+    for (key in data)
+    {
+        let row = table.insertRow();
+        let cellTitle = row.insertCell(0);
+        let cellValue = row.insertCell(1);
+        let textTitle = document.createTextNode([key]);
+        let textValue = document.createTextNode(data[key])
+        cellTitle.appendChild(textTitle);
+        cellValue.appendChild(textValue);
+    }
 }
 
-function updateArmor(item) {
+let table = document.querySelector("table");
 
-}
+newCharacter(table, newClass);
 
-function updateRing(item) {
+window.addEventListener('load', newCharacter(table, data));
 
-}
+document.getElementById("btn").addEventListener('click', updateCharacter);
