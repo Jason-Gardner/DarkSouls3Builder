@@ -9,7 +9,10 @@
         <p><a href="https://docs.microsoft.com/aspnet/core">Praise the Sun!</a></p>
         <label for="class">Select Your Starting Class</label><br />
 
-        <form method="post" id="createClass" asp-action="Character" asp-controller="Home">
+        <form method="post" id="createClass" asp-action="Character" asp-controller="Home" onsubmit="">
+            <select id="selectClass">
+                <option value="knight">Knight</option>
+            </select>
             <button type="submit">Create New Unkindled</button>
         </form>
     </div>

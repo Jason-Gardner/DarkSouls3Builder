@@ -1,4 +1,4 @@
-﻿let newClass = {
+﻿var newClass = {
     start: "Knight",
     level: 1,
     strength: 1,
@@ -23,6 +23,10 @@
 //    }
 //}
 
+let table = document.querySelector("table");
+
+table.addEventListener('load', newCharacter(table, newClass));
+
 function newCharacter(table, data) {
     for (key in data)
     {
@@ -30,16 +34,20 @@ function newCharacter(table, data) {
         let cellTitle = row.insertCell(0);
         let cellValue = row.insertCell(1);
         let textTitle = document.createTextNode([key]);
-        let textValue = document.createTextNode(data[key])
+        let textValue = document.createTextNode(data[key]);
         cellTitle.appendChild(textTitle);
         cellValue.appendChild(textValue);
     }
 }
 
-let table = document.querySelector("table");
+document.getElementById("btn").addEventListener('click', updateCharacter());
 
-newCharacter(table, newClass);
+function updateCharacter(table, data) {
+    
+}
 
-window.addEventListener('load', newCharacter(table, data));
 
-document.getElementById("btn").addEventListener('click', updateCharacter);
+
+
+
+
