@@ -2,19 +2,52 @@
     ViewData["Title"] = "Home Page";
 }
 <html>
-<body style="background-color: black">
+<body style="background-color: black" id="display">
     <div class="text-center" style="font-family: Impact; color: bisque">
         <h1 class="display-4">Welcome to the Dark Souls Imaginarium</h1>
-        <p style="font-size: 72px">\[T]/</p>
-        <p><a href="https://docs.microsoft.com/aspnet/core">Praise the Sun!</a></p>
         <label for="class">Select Your Starting Class</label><br />
-
-        <form method="post" id="createClass" asp-action="Character" asp-controller="Home" onsubmit="">
-            <select id="selectClass">
-                <option value="knight">Knight</option>
+        <form onchange="display()">
+            <select id="select">
+                <option value=""></option>
+                <option value="Knight">Knight</option>
+                <option value="Warrior">Warrior</option>
+                <option value="Cleric">Cleric</option>
+                <option value="Deprived">Deprived</option>
+                <option value="Thief">Thief</option>
+                <option value="Mercenary">Mercenary</option>
+                <option value="Sorcerer">Sorcerer</option>
+                <option value="Assassin">Assassin</option>
+                <option value="Pyromancer">Pyromancer</option>
             </select>
-            <button type="submit">Create New Unkindled</button>
         </form>
+        <br />
+        <table align="center" style="border: 2px solid white">
+            <tr>
+                <td>Starting Class: </td><td id="yourClass"> - </td>
+            </tr>
+            <tr>
+                <td>Strength: </td><td id="newStr"> - </td>
+            </tr>
+            <tr>
+                <td>Dexterity: </td><td id="newDex"> - </td>
+            </tr>
+            <tr>
+                <td>Intelligence: </td><td id="newInt"> - </td>
+            </tr>
+            <tr>
+                <td>Vigor: </td><td id="newVig"> - </td>
+            </tr>
+            <tr>
+                <td>Vitality: </td><td id="newVit"> - </td>
+            </tr>
+            <tr>
+                <td>Attunement: </td><td id="newAtt"> - </td>
+            </tr>
+
+        </table>
+                   
+
+        <script src="~/js/site.js"></script>
     </div>
 </body>
 </html>
