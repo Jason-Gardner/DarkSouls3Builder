@@ -108,3 +108,4 @@ C:\Users\Jason Gardner\source\repos\DarkSouls3\DarkSouls3\bin\Debug\netcoreapp3.
 C:\Users\Jason Gardner\source\repos\DarkSouls3\DarkSouls3\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\Jason Gardner\source\repos\DarkSouls3\DarkSouls3\obj\Debug\netcoreapp3.1\DarkSouls3.csproj.CoreCompileInputs.cache
 C:\Users\Jason Gardner\source\repos\DarkSouls3\DarkSouls3\obj\Debug\netcoreapp3.1\DarkSouls3.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jason Gardner\source\repos\DarkSouls3\DarkSouls3\obj\Debug\netcoreapp3.1\Razor\Views\Home\Character.cshtml.g.cs

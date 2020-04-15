@@ -25,6 +25,11 @@ namespace DarkSouls3.Controllers
             return View();
         }
 
+        public IActionResult Character(Build myBuild)
+        {
+            return View(myBuild);
+        }
+
         public IActionResult Privacy()
         {
             return View();
