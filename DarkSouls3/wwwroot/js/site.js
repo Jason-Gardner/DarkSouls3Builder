@@ -11,6 +11,15 @@ var newEnd = document.getElementById("newEnd");
 var newLuck = document.getElementById("newLuck");
 var newFth = document.getElementById("newFth");
 
+var newWeapon = document.getElementById("weapon");
+var newShield = document.getElementById("shield");
+var newHelm = document.getElementById("helm");
+var newGloves = document.getElementById("gloves");
+var newBoots = document.getElementById("boots");
+var newArmor = document.getElementById("armor");
+
+var stats;
+
 function display() {
     if (sel.value == "") {
         newClass.innerHTML = " ------- ";
@@ -18,7 +27,7 @@ function display() {
         newClass.innerHTML = sel.value;
     }
     
-    var stats = createBuild(sel.value);
+    stats = createBuild(sel.value);
     newLevel.innerHTML = stats.level;
     newStr.innerHTML = stats.str;
     newDex.innerHTML = stats.dex;
@@ -32,8 +41,6 @@ function display() {
 }
 
 function createBuild(start) {
-    var stats;
-
     if (start == "") {
         stats = {
             level: 0,

@@ -3,7 +3,7 @@
 }
 <html>
 <body style="background-color: black" id="display">
-    <div class="text-center" style="font-family: Impact; color: bisque; font-size: 20px">
+    <div class="align-content-center" style="font-family: Impact; color: bisque; font-size: 16px">
         <h1 class="display-4">Welcome to the Dark Souls Imaginarium</h1>
         <label for="class">Select Your Starting Class</label><br />
         <form onchange="display()">
@@ -21,54 +21,137 @@
             </select>
         </form>
         <br />
-        <table align="center" border="1" style="border: 2px solid white">
-            <tr>
-                <td>Starting Class: </td>
-                <td id="yourClass"> ------- </td>
-            </tr>
-            <tr>
-                <td>Starting Level: </td>
-                <td id="newLevel"> 0 </td>
-            </tr>
-            <tr>
-                <td>Vigor: </td>
-                <td id="newVig"> 0 </td>
-            </tr>
-            <tr>
-                <td>Attunement: </td>
-                <td id="newAtt"> 0 </td>
-            </tr>
-            <tr>
-                <td>Endurance: </td>
-                <td id="newEnd"> 0 </td>
-            </tr>
-            <tr>
-                <td>Vitality: </td>
-                <td id="newVit"> 0 </td>
-            </tr>
-            <tr>
-                <td>Strength: </td>
-                <td id="newStr"> 0 </td>
-            </tr>
-            <tr>
-                <td>Dexterity: </td>
-                <td id="newDex"> 0 </td>
-            </tr>
-            <tr>
-                <td>Intelligence: </td>
-                <td id="newInt"> 0 </td>
-            </tr>
-            <tr>
-                <td>Faith: </td>
-                <td id="newFth"> 0 </td>
-            </tr>
-            <tr>
-                <td>Luck: </td>
-                <td id="newLuck"> 0 </td>
-            </tr>
-        </table>
+        <div class="row">
+            <div class="col-2">
+                <table border="1" style="border: 2px solid white">
+                    <tr>
+                        <td>Starting Class: </td>
+                        <td id="yourClass"> ------- </td>
+                    </tr>
+                    <tr>
+                        <td>Starting Level: </td>
+                        <td id="newLevel"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Vigor: </td>
+                        <td id="newVig"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Attunement: </td>
+                        <td id="newAtt"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Endurance: </td>
+                        <td id="newEnd"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Vitality: </td>
+                        <td id="newVit"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Strength: </td>
+                        <td id="newStr"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Dexterity: </td>
+                        <td id="newDex"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Intelligence: </td>
+                        <td id="newInt"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Faith: </td>
+                        <td id="newFth"> 0 </td>
+                    </tr>
+                    <tr>
+                        <td>Luck: </td>
+                        <td id="newLuck"> 0 </td>
+                    </tr>
+                </table>
+            </div><div align="center" class="col-5">
+                <table>
+                    <tr>
+                        <td>
+                            Choose Weapon
+                        </td>
+                        <td>
+                            <select id="weapon" style="width: 200px">
+                                <option>Sword</option>
+                                <option>Axe</option>
+                                <option>Bow and Arrow</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose Shield
+                        </td>
+                        <td>
+                            <select id="shield" style="width: 200px">
+                                <option>Grass Crest Shield</option>
+                                <option>Shield of Want</option>
+                                <option>Black Knight Greatshield</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose Helm
+                        </td>
+                        <td>
+                            <select id="helm" style="width: 200px">
+                                <option>Black Knight Helm</option>
+                                <option>Prayer Hood</option>
+                                <option>Sun Knight Helm</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
 
-        <button id="saveClass" onclick="alert('Yes.')">Create Unkindled</button>
+            </div>
+            <div align ="center" class="col-5">
+                <table>
+                    <tr>
+                        <td>
+                            Choose Armor
+                        </td>
+                        <td>
+                            <select id="armor" style="width: 200px">
+                                <option>Havel's Armor</option>
+                                <option>Pontiff Knight Armor</option>
+                                <option>Deacon's Robes</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose Gloves
+                        </td>
+                        <td>
+                            <select id="gloves" style="width: 200px">
+                                <option>Priest Gloves</option>
+                                <option>Sun Knight Gauntlet</option>
+                                <option>Black Knight Gauntlet</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Choose Boots
+                        </td>
+                        <td>
+                            <select id="boots" style="width: 200px">
+                                <option>Dark Boots</option>
+                                <option>Tattered Boots</option>
+                                <option>Priestess Boots</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
 
         <script src="~/js/site.js"></script>
     </div>
