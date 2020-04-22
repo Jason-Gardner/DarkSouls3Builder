@@ -3,7 +3,7 @@
 }
 <html>
 <body style="background-color: black" id="display">
-    <div class="align-content-center" style="font-family: Impact; color: bisque; font-size: 16px">
+    <div class="align-content-center" style="font-family: Impact; color: bisque; font-size: 18px">
         <h1 class="display-4">Welcome to the Dark Souls Imaginarium</h1>
         <label for="class">Select Your Starting Class</label><br />
         <form onchange="display()">
@@ -22,8 +22,8 @@
         </form>
         <br />
         <div class="row">
-            <div class="col-2">
-                <table border="1" style="border: 2px solid white">
+            <div class="col-4">
+                <table border="1" style="border: 2px solid white" width="75%">
                     <tr>
                         <td>Starting Class: </td>
                         <td id="yourClass"> ------- </td>
@@ -69,7 +69,8 @@
                         <td id="newLuck"> 0 </td>
                     </tr>
                 </table>
-            </div><div align="center" class="col-5">
+            </div>
+            <div align="center" class="col-4">
                 <table>
                     <tr>
                         <td>
@@ -77,9 +78,9 @@
                         </td>
                         <td>
                             <select id="weapon" style="width: 200px">
-                                <option>Sword</option>
-                                <option>Axe</option>
-                                <option>Bow and Arrow</option>
+                                <option value="Greatsword">Greatsword</option>
+                                <option value="Spear">Spear</option>
+                                <option value="Crossbow">Crossbow</option>
                             </select>
                         </td>
                     </tr>
@@ -89,9 +90,9 @@
                         </td>
                         <td>
                             <select id="shield" style="width: 200px">
-                                <option>Grass Crest Shield</option>
-                                <option>Shield of Want</option>
-                                <option>Black Knight Greatshield</option>
+                                <option value="Grass Crest Shield">Grass Crest Shield</option>
+                                <option value="Shield of Want">Shield of Want</option>
+                                <option value="Black Knight Greatshield">Black Knight Greatshield</option>
                             </select>
                         </td>
                     </tr>
@@ -101,26 +102,21 @@
                         </td>
                         <td>
                             <select id="helm" style="width: 200px">
-                                <option>Black Knight Helm</option>
-                                <option>Prayer Hood</option>
-                                <option>Sun Knight Helm</option>
+                                <option value="Black Knight Helm">Black Knight Helm</option>
+                                <option value="Prayer Hood">Prayer Hood</option>
+                                <option value="Sun Knight Helm">Sun Knight Helm</option>
                             </select>
                         </td>
                     </tr>
-                </table>
-
-            </div>
-            <div align ="center" class="col-5">
-                <table>
                     <tr>
                         <td>
                             Choose Armor
                         </td>
                         <td>
                             <select id="armor" style="width: 200px">
-                                <option>Havel's Armor</option>
-                                <option>Pontiff Knight Armor</option>
-                                <option>Deacon's Robes</option>
+                                <option value="Havel's Armor">Havel's Armor</option>
+                                <option value="Pontiff Knight Armor">Pontiff Knight Armor</option>
+                                <option value="Deacon's Robes">Deacon's Robes</option>
                             </select>
                         </td>
                     </tr>
@@ -130,9 +126,9 @@
                         </td>
                         <td>
                             <select id="gloves" style="width: 200px">
-                                <option>Priest Gloves</option>
-                                <option>Sun Knight Gauntlet</option>
-                                <option>Black Knight Gauntlet</option>
+                                <option value="Priest Gloves">Priest Gloves</option>
+                                <option value="Sun Knight Gauntlet">Sun Knight Gauntlet</option>
+                                <option value="Black Knight Gauntlet">Black Knight Gauntlet</option>
                             </select>
                         </td>
                     </tr>
@@ -142,14 +138,44 @@
                         </td>
                         <td>
                             <select id="boots" style="width: 200px">
-                                <option>Dark Boots</option>
-                                <option>Tattered Boots</option>
-                                <option>Priestess Boots</option>
+                                <option value="Dark Boots">Dark Boots</option>
+                                <option value="Tattered Boots">Tattered Boots</option>
+                                <option value="Priestess Boots">Priestess Boots</option>
                             </select>
                         </td>
                     </tr>
                 </table>
-
+                <br />
+                <button type="button" onclick="change()">Create Build</button>
+            </div>
+            <div align="center" class="col-4">
+                <table>
+                    <tr>
+                        <td id="newWeapon">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="newShield">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="newHelm">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="newArmor">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="newGloves">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="newBoots">
+                        </td>
+                    </tr>
+                </table>
+                <p id="selected"></p>
             </div>
         </div>
 

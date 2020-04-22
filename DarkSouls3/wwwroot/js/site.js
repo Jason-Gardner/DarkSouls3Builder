@@ -11,12 +11,21 @@ var newEnd = document.getElementById("newEnd");
 var newLuck = document.getElementById("newLuck");
 var newFth = document.getElementById("newFth");
 
-var newWeapon = document.getElementById("weapon");
-var newShield = document.getElementById("shield");
-var newHelm = document.getElementById("helm");
-var newGloves = document.getElementById("gloves");
-var newBoots = document.getElementById("boots");
-var newArmor = document.getElementById("armor");
+var getWeapon = document.getElementById("weapon");
+var getShield = document.getElementById("shield");
+var getHelm = document.getElementById("helm");
+var getGloves = document.getElementById("gloves");
+var getBoots = document.getElementById("boots");
+var getArmor = document.getElementById("armor");
+
+var newWeapon = document.getElementById("newWeapon");
+var newShield = document.getElementById("newShield");
+var newHelm = document.getElementById("newHelm");
+var newGloves = document.getElementById("newGloves");
+var newBoots = document.getElementById("newBoots");
+var newArmor = document.getElementById("newArmor");
+
+var show = document.getElementById("selected");
 
 var stats;
 
@@ -38,6 +47,17 @@ function display() {
     newLuck.innerHTML = stats.luck;
     newEnd.innerHTML = stats.end;
     newFth.innerHTML = stats.fth;
+}
+
+function change() { 
+    newWeapon.innerHTML = getWeapon.value;
+    newArmor.innerHTML = getArmor.value;
+    newBoots.innerHTML = getBoots.value;
+    newShield.innerHTML = getShield.value;
+    newGloves.innerHTML = getGloves.value;
+    newHelm.innerHTML = getHelm.value;
+
+    show.innerHTML = "You need a lot of souls.";
 }
 
 function createBuild(start) {
