@@ -29,13 +29,15 @@ var show = document.getElementById("selected");
 
 var stats;
 
+var weaponStats;
+
 function display() {
     if (sel.value == "") {
         newClass.innerHTML = " ------- ";
     } else {
         newClass.innerHTML = sel.value;
     }
-    
+
     stats = createBuild(sel.value);
     newLevel.innerHTML = stats.level;
     newStr.innerHTML = stats.str;
@@ -49,7 +51,7 @@ function display() {
     newFth.innerHTML = stats.fth;
 }
 
-function change() { 
+function change() {
     newWeapon.innerHTML = getWeapon.value;
     newArmor.innerHTML = getArmor.value;
     newBoots.innerHTML = getBoots.value;
@@ -57,7 +59,44 @@ function change() {
     newGloves.innerHTML = getGloves.value;
     newHelm.innerHTML = getHelm.value;
 
-    show.innerHTML = "You need a lot of souls.";
+    weaponStats = checkWeapon(getWeapon.value);
+
+    if (stats.str < weaponStats.wstr || stats.dex < weaponStats.wdex || stats.fth < weaponStats.wfth || stats.int < weaponStats.wint) {
+        show.innerHTML = "You do not have the appropriate stats for this weapon.";
+    }
+}
+
+function checkWeapon(weapon) {
+    alert("check");
+    if (weapon == "") {
+        weaponStats = {
+            wstr: 0,
+            wdex: 0,
+            wfth: 0,
+            wint: 0
+        };
+    }
+
+    if (weapon == "Longsword") {
+        weaponStats = {
+            wstr: 10,
+            wdex: 10,
+            wfth: 0,
+            wint: 0
+        };
+    }
+
+    if (weapon == "Sorcerer's Staff") {
+        weaponStats = {
+            wstr: 6,
+            wdex: 0,
+            wfth: 0,
+            wint: 10
+        };
+    }
+
+
+    return weaponStats;
 }
 
 function createBuild(start) {
