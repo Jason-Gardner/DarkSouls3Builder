@@ -27,6 +27,8 @@ var newArmor = document.getElementById("newArmor");
 
 var show = document.getElementById("selected");
 
+var load = document.getElementById("load");
+
 var stats;
 
 var weaponStats;
@@ -36,44 +38,54 @@ function display() {
         newClass.innerHTML = " ------- ";
     } else {
         newClass.innerHTML = sel.value;
-    }
 
-    stats = createBuild(sel.value);
-    newLevel.innerHTML = stats.level;
-    newStr.innerHTML = stats.str;
-    newDex.innerHTML = stats.dex;
-    newInt.innerHTML = stats.int;
-    newVit.innerHTML = stats.vit;
-    newVig.innerHTML = stats.vig;
-    newAtt.innerHTML = stats.att;
-    newLuck.innerHTML = stats.luck;
-    newEnd.innerHTML = stats.end;
-    newFth.innerHTML = stats.fth;
+        stats = createBuild(sel.value);
+        newLevel.innerHTML = stats.level;
+        newStr.innerHTML = stats.str;
+        newDex.innerHTML = stats.dex;
+        newInt.innerHTML = stats.int;
+        newVit.innerHTML = stats.vit;
+        newVig.innerHTML = stats.vig;
+        newAtt.innerHTML = stats.att;
+        newLuck.innerHTML = stats.luck;
+        newEnd.innerHTML = stats.end;
+        newFth.innerHTML = stats.fth;
+    }
 }
 
 function change() {
-    newWeapon.innerHTML = getWeapon.value;
-    newArmor.innerHTML = getArmor.value;
-    newBoots.innerHTML = getBoots.value;
-    newShield.innerHTML = getShield.value;
-    newGloves.innerHTML = getGloves.value;
-    newHelm.innerHTML = getHelm.value;
+    if (stats == null) {
+        alert("Please select a class.");
+    } else {
+        newWeapon.innerHTML = getWeapon.value;
+        newArmor.innerHTML = getArmor.value;
+        newBoots.innerHTML = getBoots.value;
+        newShield.innerHTML = getShield.value;
+        newGloves.innerHTML = getGloves.value;
+        newHelm.innerHTML = getHelm.value;
 
-    weaponStats = checkWeapon(getWeapon.value);
+        weaponStats = checkWeapon(getWeapon.value);
+        armorStats = checkArmor(getBoots.value, getHelm.value, getGloves.value, getShield.value, getArmor.value);
 
-    if (stats.str < weaponStats.wstr || stats.dex < weaponStats.wdex || stats.fth < weaponStats.wfth || stats.int < weaponStats.wint) {
-        show.innerHTML = "You do not have the appropriate stats for this weapon.";
+        load.innerHTML = "Load: " + (weaponStats.load + armorStats) + " / 50";
+
+        if (stats.str < weaponStats.wstr || stats.dex < weaponStats.wdex || stats.fth < weaponStats.wfth || stats.int < weaponStats.wint) {
+            show.innerHTML = "You do not have the appropriate stats for this weapon.";
+        } else {
+            show.innerHTML = "";
+        }
     }
+
 }
 
 function checkWeapon(weapon) {
-    alert("check");
     if (weapon == "") {
         weaponStats = {
             wstr: 0,
             wdex: 0,
             wfth: 0,
-            wint: 0
+            wint: 0,
+            load: 0
         };
     }
 
@@ -82,7 +94,18 @@ function checkWeapon(weapon) {
             wstr: 10,
             wdex: 10,
             wfth: 0,
-            wint: 0
+            wint: 0,
+            load: 3.0
+        };
+    }
+
+    if (weapon == "Bandit's Knife") {
+        weaponStats = {
+            wstr: 6,
+            wdex: 12,
+            wfth: 0,
+            wint: 0,
+            load: 1.5
         };
     }
 
@@ -91,12 +114,61 @@ function checkWeapon(weapon) {
             wstr: 6,
             wdex: 0,
             wfth: 0,
-            wint: 10
+            wint: 10,
+            load: 2.0
         };
     }
 
 
     return weaponStats;
+}
+
+function checkArmor(boots, helm, gloves, shield, armor) {
+    var weight = 0;
+
+    if (boots == "Black Leather Boots") {
+        weight += 3.6;
+    } else if (boots == "Conjurator Boots") {
+        weight += 2.6;
+    } else if (boots == "Deacon Skirt") {
+        weight += 2.3;
+    }
+
+    if (helm == "Black Knight Helm") {
+        weight += 5.4;
+    } else if (helm == "Hood of Prayer") {
+        weight += 1.3;
+    } else if (helm == "Iron Helm") {
+        weight += 5.8;
+    }
+
+    if (gloves == "Black Knight Gauntlets") {
+        weight += 3.9;
+    } else if (gloves == "Herald Gloves") {
+        weight += 2.9;
+    } else if (gloves == "Shadow Gauntlets") {
+        weight += 1.3;
+    }
+
+    if (armor == "Havel's Armor") {
+        weight += 21.6;
+    } else if (armor == "Pontiff Knight Armor") {
+        weight += 7.3;
+    } else if (armor == "Deacon Robe") {
+        weight += 3.5;
+    }
+
+    if (shield == "Grass Crest Shield") {
+        weight += 4.5;
+    } else if (shield == "Twin Dragon Greatshield") {
+        weight += 7.0;
+    } else if (shield == "Shield of Want") {
+        weight += 5.5;
+    }
+
+    
+
+    return weight;
 }
 
 function createBuild(start) {
